@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="app_calc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zt4-VJ-nZg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="mL3-tz-olL">
+                                <rect key="frame" x="182" y="423" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zt4-VJ-nZg" secondAttribute="trailing" id="G17-HR-qZe"/>
+                            <constraint firstItem="zt4-VJ-nZg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YaU-dO-bO7"/>
+                            <constraint firstItem="zt4-VJ-nZg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tWd-VZ-WET"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zt4-VJ-nZg" secondAttribute="bottom" id="ysk-a2-DQF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="indicator" destination="mL3-tz-olL" id="eOg-yb-P1E"/>
+                        <outlet property="webView" destination="zt4-VJ-nZg" id="Des-Md-8Zk"/>
+                        <segue destination="d5B-Sz-Dm1" kind="showDetail" identifier="bannerSegue" id="CxB-xc-1CQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--Banner View Controller-->
+        <scene sceneID="JDg-om-dnr">
+            <objects>
+                <viewController storyboardIdentifier="BannerView" id="d5B-Sz-Dm1" customClass="BannerViewController" customModule="app_calc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jfg-W9-hez">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aOT-Xn-Vqm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="798"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0JS-WI-u6k"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0JS-WI-u6k" firstAttribute="bottom" secondItem="aOT-Xn-Vqm" secondAttribute="bottom" id="Bik-RV-nNE"/>
+                            <constraint firstItem="0JS-WI-u6k" firstAttribute="trailing" secondItem="aOT-Xn-Vqm" secondAttribute="trailing" id="EnU-Dy-2zh"/>
+                            <constraint firstItem="aOT-Xn-Vqm" firstAttribute="top" secondItem="0JS-WI-u6k" secondAttribute="top" id="Ngk-zf-KIN"/>
+                            <constraint firstItem="aOT-Xn-Vqm" firstAttribute="leading" secondItem="0JS-WI-u6k" secondAttribute="leading" id="uBd-0h-D67"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="aOT-Xn-Vqm" id="Evi-md-zOW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfz-V1-v7u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1003" y="138"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
